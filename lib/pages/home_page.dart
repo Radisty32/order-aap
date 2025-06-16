@@ -20,3 +20,25 @@ class HomePage extends StatelessWidget {
       description: 'Pizza dengan topping keju dan pepperoni.',
     ),
   ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Menu Makanan'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => CartPage()),
+            ),
+          )
+        ],
+      ),
+      body: ListView(
+        children: foods.map((food) => FoodTile(food: food)).toList(),
+      ),
+    );
+  }
+}

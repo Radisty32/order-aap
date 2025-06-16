@@ -10,3 +10,12 @@ class CartProvider with ChangeNotifier {
     _cartItems.add(food);
     notifyListeners();
   }
+
+  void removeFromCart(Food food) {
+    _cartItems.remove(food);
+    notifyListeners();
+  }
+
+  double get totalPrice =>
+      _cartItems.fold(0, (sum, item) => sum + item.price);
+}

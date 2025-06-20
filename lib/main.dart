@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'pages/home_page.dart';
 import 'providers/cart_provider.dart';
 
+
 void main() {
   runApp(
     ChangeNotifierProvider(create: (context) => CartProvider(), child: MyApp()),

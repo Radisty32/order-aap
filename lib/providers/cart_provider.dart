@@ -1,5 +1,5 @@
-import 'C:flutter/foundation.dart';
-import '../models/food.dart';
+import 'package:flutter/foundation.dart';
+import 'package:order_aap/models/food.dart';
 
 class CartProvider with ChangeNotifier {
   final List<Food> _cartItems = [];

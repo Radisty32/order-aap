@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/food.dart';
-import '../pages/food_detail_page.dart';
+import 'package:order_aap/models/food.dart';
+import 'package:order_aap/pages/food_detail_page.dart';
 
 class FoodTile extends StatelessWidget {
   final Food food;
-  const FoodTile({required this.food});
+  const FoodTile({super.key,required this.food});
 
     @override
   Widget build(BuildContext context) {

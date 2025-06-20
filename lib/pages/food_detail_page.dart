@@ -4,18 +4,18 @@ import '../models/food.dart';
 import '../providers/cart_provider.dart';
 
 class FoodDetailPage extends StatelessWidget {
-    final Food food;
+  final Food food;
 
-    const FoodDetailPage({required this.food});
+  const FoodDetailPage({super.key,required this.food});
 
-    @override
-    Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(food.name)),
-        body: Padding(
+      appBar: AppBar(title: Text(food.name)),
+      body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
-            children: [
+          children: [
             Image.network(food.imageUrl),
             SizedBox(height: 20),
             Text(food.description),
@@ -23,18 +23,22 @@ class FoodDetailPage extends StatelessWidget {
             Text('Harga: Rp${food.price.toStringAsFixed(0)}'),
             SizedBox(height: 20),
             ElevatedButton(
-                onPressed: () {
-                Provider.of<CartProvider>(context, listen: false)
-                    .addToCart(food);
+              onPressed: () {
+                Provider.of<CartProvider>(
+                  context,
+                  listen: false,
+                ).addToCart(food);
                 ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('${food.name} ditambahkan ke keranjang')),
+                  SnackBar(
+                    content: Text('${food.name} ditambahkan ke keranjang'),
+                  ),
                 );
-                },
-                child: Text('Tambah ke Keranjang'),
-            )
-            ],
+              },
+              child: Text('Tambah ke Keranjang'),
+            ),
+          ],
         ),
-        ),
+      ),
     );
-    }
+  }
 }

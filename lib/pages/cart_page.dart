@@ -26,3 +26,11 @@ class CartPage extends StatelessWidget {
                 );
               },
             ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(16),
+        child: Text(
+          'Total: Rp${cart.totalPrice.toStringAsFixed(0)}',
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+    );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'pages/home_page.dart';
 import 'providers/cart_provider.dart';
+import 'package:order_aap/pages/main_pages.dart';
 
 
 void main() {
@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Food Order App',
       theme: ThemeData(primarySwatch: Colors.orange),
-      home: HomePage(),
+      home: MainPage(),
       debugShowCheckedModeBanner: false,
+      
     );
   }
 }

@@ -10,7 +10,7 @@ class CardPage extends StatelessWidget {
     final cart = Provider.of<CartProvider>(context);
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 131, 188, 235),
+      backgroundColor: const Color.fromARGB(255, 203, 229, 250),
       appBar: AppBar(title: const Text('Keranjang',  style: TextStyle(fontWeight: FontWeight.bold))),
       body: cart.items.isEmpty
           ? const Center(child: Text('Keranjang kosong',  style: TextStyle(fontWeight: FontWeight.bold)))

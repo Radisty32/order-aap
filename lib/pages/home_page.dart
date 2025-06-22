@@ -1,11 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:order_aap/models/food.dart';
 import 'package:order_aap/providers/cart_provider.dart';
 import 'package:order_aap/providers/food_api_services.dart';
-import 'package:order_aap/pages/card_page.dart';
 import 'package:provider/provider.dart';
+import 'package:order_aap/pages/profile_detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -49,25 +47,39 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 203, 229, 250),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text(
           'Phiiyoo Store',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         actions: [
-          Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(shape: BoxShape.circle),
-            child: ClipOval(
-              child: Image.asset(
-                'assets/image/WhatsApp Image 2025-06-20 at 16.16.20_cf50605b.jpg',
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Icon(Icons.verified_user, color: Colors.grey,),
+          Padding(
+            padding: const EdgeInsets.only(
+              right: 16.0,
+            ), // beri jarak dari kanan
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileDetailPage()),
+                );
+              },
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/image/WhatsApp Image 2025-06-20 at 16.16.20_cf50605b.jpg',
+                  width: 40,
+                  height: 40,
+                  fit: BoxFit.cover,
+                  errorBuilder:
+                      (context, error, stackTrace) =>
+                          Icon(Icons.verified_user, color: Colors.grey),
+                ),
               ),
             ),
           ),
         ],
       ),
+
       body: FutureBuilder<List<Food>>(
         future: _foodsFuture,
         builder: (context, snapshot) {

@@ -19,7 +19,7 @@ class ProfileDetailPage extends StatelessWidget {
               child: CircleAvatar(
                 radius: 60,
                 backgroundImage: AssetImage(
-                  'assets/images/profile.jpg',
+                  'assets/image/WhatsApp Image 2025-06-20 at 16.16.20_cf50605b.jpg',
                 ), // ganti sesuai aset Anda
               ),
             ),
@@ -27,13 +27,13 @@ class ProfileDetailPage extends StatelessWidget {
 
             // Nama
             Text(
-              'John Doe',
+              'Admin',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
 
             // Email
             Text(
-              'johndoe@email.com',
+              'Admin.com',
               style: TextStyle(fontSize: 16, color: Colors.grey[600]),
             ),
 
@@ -58,7 +58,7 @@ class ProfileDetailPage extends StatelessWidget {
                     icon: Icons.info,
                     title: 'Tentang',
                     value:
-                        'Seorang pengembang Flutter yang berdedikasi untuk membangun aplikasi berkualitas.',
+                        'Player Pubg.',
                   ),
                   SizedBox(height: 20),
                   ElevatedButton.icon(
